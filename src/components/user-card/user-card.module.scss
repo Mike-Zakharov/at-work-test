@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  height: 168px;
+  padding: 24px;
+  background: $color-06;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+
+.avatar {
+  width: 112px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  margin-left: 20px;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: 600;
+  color: #22A0BC; // accent
+
+}
+
+.company {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #595959;
+
+}
+
+.city {
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: 500;
+  color: #9C9C9C;
+
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 24px 24px;
+}
+

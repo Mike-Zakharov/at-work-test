@@ -1,0 +1,55 @@
+@import  "../../styles/variables";
+
+.dropdown{
+  height: 100%;
+}
+.toggleButton {
+  cursor: pointer;
+  border: none;
+  background-color: $color-06;
+  svg {
+    pointer-events: none; 
+  }
+
+  &:hover {
+    fill: $color-accent;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 8px;
+  padding: 12px 0;
+  background: #fff;
+  border-radius: 12px;
+  min-width: 160px;
+  list-style: none;
+  z-index: 10;
+
+  li {
+    margin: 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+    color: #161616;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #f4f4f4;
+    }
+
+    &:focus {
+      outline: none;
+      background: #e0e0e0;
+    }
+  }
+}
