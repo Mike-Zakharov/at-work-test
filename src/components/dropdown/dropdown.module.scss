@@ -1,14 +1,16 @@
-@import  "../../styles/variables";
+@use "../../styles/variables" as *;
 
-.dropdown{
-  height: 100%;
+.dropdown {
+  height: 24px;
 }
+
 .toggleButton {
   cursor: pointer;
   border: none;
   background-color: $color-06;
+  height: 24px;
   svg {
-    pointer-events: none; 
+    pointer-events: none;
   }
 
   &:hover {
@@ -19,14 +21,16 @@
 .menu {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -208px;
   margin-top: 8px;
-  padding: 12px 0;
-  background: #fff;
+  padding: 8px;
+  gap: 8px;
+  background: $color-06;
   border-radius: 12px;
-  min-width: 160px;
+  width: 200px;
   list-style: none;
   z-index: 10;
+  box-shadow: 0px 0px 2px 0px #5a5a5a;
 
   li {
     margin: 0;
@@ -38,18 +42,27 @@
     border: none;
     background: none;
     text-align: left;
-    font-size: 16px;
-    color: #161616;
+    font-size: $font-desktop-text2-size;
+    font-weight: $font-desktop-text2-weight-medium;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-01;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: color 0.3s ease;
 
     &:hover {
-      background: #f4f4f4;
+      color: $color-accent;
     }
+  }
+}
 
-    &:focus {
-      outline: none;
-      background: #e0e0e0;
+@media (max-width: 375px) {
+  .menu {
+    width: 160px;
+
+    button {
+      font-weight: $font-mobile-text2-weight-medium;
+      font-size: $font-mobile-text2-size;
     }
   }
 }

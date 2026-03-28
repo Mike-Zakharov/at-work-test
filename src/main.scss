@@ -1,4 +1,4 @@
-@import "./styles/reset";
+@use "./styles/reset" as *;
 
 html {
   font-family: Manrope;

@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables" as *;
 
 .card {
   position: relative;
@@ -11,12 +11,11 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease;
-  
+
   &:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   }
 }
-
 
 .avatar {
   width: 112px;
@@ -36,8 +35,7 @@
 .username {
   font-size: 20px;
   font-weight: 600;
-  color: #22A0BC; // accent
-
+  color: #22a0bc; // accent
 }
 
 .company {
@@ -45,15 +43,13 @@
   font-size: 18px;
   font-weight: 500;
   color: #595959;
-
 }
 
 .city {
   margin-top: auto;
   font-size: 16px;
   font-weight: 500;
-  color: #9C9C9C;
-
+  color: #9c9c9c;
 }
 
 .cardActions {
@@ -61,4 +57,3 @@
   justify-content: flex-end;
   padding: 0 24px 24px;
 }
-

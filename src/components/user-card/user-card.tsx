@@ -12,10 +12,11 @@ type UserCardProps = {
   avatarUrl?: string;
 };
 
-type UserAction = "edit" | "archive" | "hide";
+type UserAction = "edit" | "archive" | "hide" | "activate";
 
 export const UserCard: React.FC<UserCardProps> = ({ id, name, city, company, avatarUrl=avatar }) => {
   const { statuses, setStatus } = useUsersStore();
+  const userStatus = statuses[id] ?? "active";
 
   const handleAction = (action: UserAction, id: number) => {
     switch (action) {
@@ -25,8 +26,10 @@ export const UserCard: React.FC<UserCardProps> = ({ id, name, city, company, ava
       case "hide":
         setStatus(id, "hidden");
         break;
+      case "activate":
+        setStatus(id, "active");
+        break;
       case "edit":
-        // TODO: редактирование
         break;
     }
   };
@@ -40,7 +43,7 @@ export const UserCard: React.FC<UserCardProps> = ({ id, name, city, company, ava
         <div className={styles.company}>{company}</div>
         <div className={styles.city}>{city}</div>
       </div>
-      <Dropdown userId={id} onAction={handleAction} />
+      <Dropdown userId={id} status={userStatus} onAction={handleAction} />
     </div>
   );
 };
