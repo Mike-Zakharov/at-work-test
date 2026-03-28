@@ -14,7 +14,13 @@ type UserCardProps = {
 
 type UserAction = "edit" | "archive" | "hide" | "activate";
 
-export const UserCard: React.FC<UserCardProps> = ({ id, name, city, company, avatarUrl=avatar }) => {
+export const UserCard: React.FC<UserCardProps> = ({
+  id,
+  name,
+  city,
+  company,
+  avatarUrl = avatar,
+}) => {
   const { statuses, setStatus } = useUsersStore();
   const userStatus = statuses[id] ?? "active";
 
@@ -36,7 +42,7 @@ export const UserCard: React.FC<UserCardProps> = ({ id, name, city, company, ava
 
   return (
     <div className={styles.card}>
-      <img className={styles.avatar} src={ avatarUrl } alt={name} />
+      <img className={styles.avatar} src={avatarUrl} alt={name} />
 
       <div className={styles.content}>
         <div className={styles.username}>{name}</div>
