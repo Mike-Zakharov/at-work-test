@@ -44,12 +44,14 @@ export const UserCard: React.FC<UserCardProps> = ({
     <div className={styles.card}>
       <img className={styles.avatar} src={avatarUrl} alt={name} />
 
-      <div className={styles.content}>
-        <div className={styles.username}>{name}</div>
-        <div className={styles.company}>{company}</div>
-        <div className={styles.city}>{city}</div>
+      <div className={styles.wrapper}>
+        <div className={styles.content}>
+          <div className={styles.username}>{name}</div>
+          <div className={styles.company}>{company}</div>
+          <div className={styles.city}>{city}</div>
+        </div>
+        <Dropdown userId={id} status={userStatus} onAction={handleAction} />
       </div>
-      <Dropdown userId={id} status={userStatus} onAction={handleAction} />
     </div>
   );
 };
