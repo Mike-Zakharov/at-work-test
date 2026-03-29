@@ -1,16 +1,13 @@
-import { MainPage } from "../../pages/users-page/main-page"
-import Header from "../header/header"
-
+import { Outlet } from "react-router";
+import Header from "../header/header";
 
 function App() {
-
-
   return (
     <>
-      <Header/>
-      <MainPage/>
+      <Header />
+      <Outlet />
     </>
-  )
+  );
 }
 
-export default App
+export { App };
