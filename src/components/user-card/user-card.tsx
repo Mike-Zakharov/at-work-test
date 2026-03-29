@@ -12,6 +12,7 @@ type UserCardProps = {
   city: string;
   company: string;
   avatarUrl?: string;
+  isArchive?: boolean;
 };
 
 export const UserCard: React.FC<UserCardProps> = ({
@@ -20,6 +21,7 @@ export const UserCard: React.FC<UserCardProps> = ({
   city,
   company,
   avatarUrl = avatar,
+  isArchive,
 }) => {
   const navigate = useNavigate();
   const { statuses, setStatus } = useUsersStore();
@@ -43,11 +45,17 @@ export const UserCard: React.FC<UserCardProps> = ({
   };
 
   return (
-    <div className={styles.card}>
-      <img className={styles.avatar} src={avatarUrl} alt={name} />
+    <div className={`${styles.card} ${isArchive ? styles.archive : ""}`}>
+      <img
+        className={`${styles.avatar} ${isArchive ? styles.avatarArchive : ""}`}
+        src={avatarUrl}
+        alt={name}
+      />
 
       <div className={styles.wrapper}>
-        <div className={styles.content}>
+        <div
+          className={`${styles.content} ${isArchive ? styles.contentArchive : ""}`}
+        >
           <div className={styles.username}>{name}</div>
           <div className={styles.company}>{company}</div>
           <div className={styles.city}>{city}</div>

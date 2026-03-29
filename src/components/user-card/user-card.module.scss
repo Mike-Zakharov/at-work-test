@@ -59,6 +59,20 @@
   padding: 0 24px 24px;
 }
 
+.avatarArchive {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.contentArchive {
+  .username {
+    color: $color-02;
+  }
+
+  .company,
+  .city {
+    color: $color-04;
+  }
+}
 @media (max-width: 376px) {
   .card {
     flex-direction: column;
