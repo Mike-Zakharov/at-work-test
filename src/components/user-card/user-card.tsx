@@ -38,8 +38,6 @@ export const UserCard: React.FC<UserCardProps> = ({
         break;
       case "edit":
         navigate(`/user/${userId}`);
-        console.log("Поехали");
-
         break;
     }
   };
