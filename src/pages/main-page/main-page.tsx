@@ -39,6 +39,7 @@ export const MainPage = () => {
                 name={user.name}
                 city={user.address.city}
                 company={user.company.name}
+                isArchive={false}
               />
             );
           })}
@@ -58,6 +59,7 @@ export const MainPage = () => {
                 name={user.name}
                 city={user.address.city}
                 company={user.company.name}
+                isArchive={true}
               />
             );
           })}
