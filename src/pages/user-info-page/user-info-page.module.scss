@@ -1,0 +1,195 @@
+@use "../../styles/variables" as *;
+
+section {
+  width: 100%;
+  background-color: $color-05;
+  padding-bottom: 265px;
+}
+
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.buttonWrapper {
+  height: 68px;
+  display: flex;
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: $font-desktop-headline-weight;
+    font-size: $font-desktop-headline-size;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-02;
+    stroke: $color-02;
+    cursor: pointer;
+    background-color: $color-05;
+    &:hover {
+      color: $color-accent;
+      stroke: $color-accent;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.left {
+  width: 360px;
+  background-color: $color-06;
+  padding: 40px;
+  gap: 40px;
+  border-radius: 8px;
+}
+
+.avatar {
+  width: 280px;
+  border-radius: 8px;
+}
+
+.navigation {
+  margin-top: 40px;
+  gap: 24px;
+  li {
+    display: block;
+    height: 34px;
+    font-weight: $font-desktop-text2-weight-semibold;
+    font-size: $font-desktop-text2-size;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-03;
+    border-bottom: 1px solid $color-04;
+    margin-top: 24px;
+  }
+  li:first-child {
+    color: $color-01;
+    margin-top: 0;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 760px;
+  background-color: $color-06;
+  padding: 40px;
+  border-radius: 8px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    width: 420px;
+
+    label {
+      font-weight: $font-desktop-text1-weight-semibold;
+      font-size: $font-desktop-text1-size;
+      line-height: 100%;
+      letter-spacing: 0%;
+    }
+
+    .submit {
+      width: 170px;
+      height: 46px;
+      gap: 12px;
+      border-radius: 50px;
+      padding: 12px 42px;
+      background-color: $color-01;
+      color: $color-06;
+      font-weight: $font-desktop-text2-weight-semibold;
+      font-size: $font-desktop-text2-size;
+      line-height: 100%;
+      letter-spacing: 0%;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+      &:hover {
+        background-color: $color-05;
+        color: $color-02;
+      }
+    }
+  }
+}
+
+.header {
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid $color-04;
+
+  h2 {
+    font-weight: $font-desktop-title-weight;
+    font-size: $font-desktop-title-size;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+}
+
+@media (max-width: 376px) {
+  section {
+    padding-bottom: 32px;
+  }
+
+  .buttonWrapper {
+    button {
+      font-weight: $font-mobile-text2-weight-medium;
+      font-size: $font-mobile-text2-size;
+    }
+  }
+
+  .left {
+    width: 344px;
+    padding: 28px;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .avatar {
+    width: 100%px;
+    height: 188px;
+  }
+
+  .navigation {
+    margin-top: 24px;
+    gap: 20px;
+    li {
+      font-weight: $font-mobile-text2-weight-medium;
+      font-size: $font-mobile-text2-size;
+    }
+  }
+
+  .right {
+    padding: 28px;
+    width: 344px;
+    form {
+      width: 288px;
+
+      .submit {
+        width: 100%;
+        font-weight: $font-mobile-text2-weight-medium;
+        font-size: $font-mobile-text2-size;
+      }
+    }
+  }
+}
+
+.header {
+  h2 {
+    font-weight: $font-mobile-title1-weight;
+    font-size: $font-mobile-title1-size;
+  }
+}

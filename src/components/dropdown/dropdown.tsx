@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./dropdown.module.scss";
 import { Icon } from "../../icons/icon";
-
-type UserStatus = "active" | "archive" | "hidden";
-type UserAction = "edit" | "archive" | "hide" | "activate";
+import type { UserAction, UserStatus } from "../../../types/users-actions";
 
 type DropdownMenuProps = {
   userId: number;
@@ -109,4 +107,3 @@ export const Dropdown: React.FC<DropdownMenuProps> = ({
     </div>
   );
 };
-
