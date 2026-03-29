@@ -46,17 +46,10 @@
 .iconWrapper {
   width: 64px;
   height: 64px;
-  background: rgba(#6fcf97, 0.2);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  svg {
-    fill: #6fcf97;
-    width: 32px;
-    height: 32px;
-  }
 }
 
 .message {
