@@ -1,3 +1,4 @@
+import { BackarrowIcon } from "./assets/backarrow-icon";
 import { CrossIcon } from "./assets/cross-icon";
 import { FavoriteIcon } from "./assets/favorite";
 import { MenuDotsIcon } from "./assets/menu-dots";
@@ -13,4 +14,5 @@ export const ICONS_MAP: Icons = {
   "menu-dots": MenuDotsIcon,
   favorite: FavoriteIcon,
   notification: NotificationIcon,
+  backarrow: BackarrowIcon,
 };

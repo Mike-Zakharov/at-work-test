@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  &:focus-within .clearBtn {
+    display: block;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 42px;
+  gap: 8px;
+  border-radius: 50px;
+  padding-right: 8px;
+  padding-left: 16px;
+  border: 2px solid $color-04;
+  font-weight: $font-desktop-text2-weight-medium;
+  font-size: $font-desktop-text2-size;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-top: 10px;
+  &:focus {
+    outline: none;
+  }
+
+  &:not(:placeholder-shown) {
+    color: $color-02;
+  }
+  &:not(:focus):not(:placeholder-shown) {
+    color: $color-01;
+  }
+}
+
+.clearBtn {
+  display: none;
+  position: absolute;
+  right: 4px;
+  top: 68%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  z-index: 10;
+  fill: $color-02;
+  svg {
+    fill: $color-02;
+  }
+  &:hover {
+    svg {
+      fill: $color-accent;
+    }
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+.error {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+@media (max-width: 376px) {
+  .input {
+    font-weight: $font-mobile-text2-weight-medium;
+    font-size: $font-mobile-text2-size;
+  }
+}

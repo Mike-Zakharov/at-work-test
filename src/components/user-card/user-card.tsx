@@ -3,6 +3,8 @@ import styles from "./user-card.module.scss";
 import avatar from "../img/avatar.jpg";
 import { Dropdown } from "../dropdown/dropdown";
 import { useUsersStore } from "../../../store/users-store";
+import { useNavigate } from "react-router";
+import type { UserAction } from "../../../types/users-actions";
 
 type UserCardProps = {
   id: number;
@@ -12,8 +14,6 @@ type UserCardProps = {
   avatarUrl?: string;
 };
 
-type UserAction = "edit" | "archive" | "hide" | "activate";
-
 export const UserCard: React.FC<UserCardProps> = ({
   id,
   name,
@@ -21,10 +21,11 @@ export const UserCard: React.FC<UserCardProps> = ({
   company,
   avatarUrl = avatar,
 }) => {
+  const navigate = useNavigate();
   const { statuses, setStatus } = useUsersStore();
   const userStatus = statuses[id] ?? "active";
 
-  const handleAction = (action: UserAction, id: number) => {
+  const handleAction = (action: UserAction, userId: number) => {
     switch (action) {
       case "archive":
         setStatus(id, "archive");
@@ -36,6 +37,9 @@ export const UserCard: React.FC<UserCardProps> = ({
         setStatus(id, "active");
         break;
       case "edit":
+        navigate(`/user/${userId}`);
+        console.log("Поехали");
+
         break;
     }
   };
